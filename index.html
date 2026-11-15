@@ -2,14 +2,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna S | Data Analytics Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anna S. — Data Analytics, Business Intelligence, and AI portfolio.">
+  <title>Anna S. | Data Analytics Portfolio</title>
+
+  <style>
+    :root {
+      --ivory: #FFF9F5;
+      --violet: #696FDE;
+      --navy: #2D4169;
+      --coral: #F28B82;
+      --muted: #52607B;
+      --lavender: #F3EFF9;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--navy);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #E9DDE4;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    .logo span { color: var(--coral); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--violet); }
+
+    .hero {
+      text-align: center;
+      padding: 105px 0 115px;
+      background:
+        radial-gradient(circle at 12% 20%, #FCE2DE 0%, transparent 34%),
+        radial-gradient(circle at 88% 70%, #E5E2FF 0%, transparent 35%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 17px;
+      background: #FCE5E0;
+      color: #9D4F66;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 28px auto 22px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.16;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span { color: var(--violet); }
+
+    .hero p {
+      max-width: 670px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 650;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px #2D416920;
+    }
+
+    .primary {
+      background: var(--violet);
+      color: white;
+    }
+
+    .secondary {
+      border: 2px solid var(--coral);
+      color: var(--navy);
+    }
+
+    section { padding: 85px 0; }
+
+    .section-label {
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 8px 0 16px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.25;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .about p {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .projects { background: var(--lavender); }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 6px 25px #2D41690A;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px #2D41691A;
+    }
+
+    .card-accent {
+      width: 58px;
+      height: 5px;
+      border-radius: 5px;
+      margin-bottom: 25px;
+    }
+
+    .coral { background: var(--coral); }
+    .violet { background: var(--violet); }
+    .navy { background: var(--navy); }
+
+    .project-number {
+      color: var(--violet);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    h3 {
+      font-size: 21px;
+      line-height: 1.35;
+      margin: 12px 0;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 15px;
+      flex-grow: 1;
+    }
+
+    .tech {
+      font-size: 13px;
+      color: var(--violet);
+      font-weight: 650;
+      margin-top: 16px;
+    }
+
+    .status {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .skill {
+      background: white;
+      border: 1px solid #E2DAEE;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 550;
+    }
+
+    .connect {
+      text-align: center;
+      background: linear-gradient(135deg, #FFF9F5, #FCEAE9);
+    }
+
+    .connect p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0 85px; }
+      section { padding: 60px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .navigation { justify-content: center; }
+      nav { justify-content: center; gap: 14px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Welcome to My Data Analytics Portfolio!</h1>
-    <h2>Anna S</h2>
-    <p>Data Analytics & Product Analytics Professional</p>
-    <p>Exploring data through Power BI, Python, SQL, Snowflake, and AI.</p>
+
+  <header>
+    <div class="container navigation">
+      <a href="#home" class="logo">Anna S<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <div class="container">
+        <span class="eyebrow">DATA ANALYTICS · BUSINESS INTELLIGENCE · AI</span>
+
+        <h1>Transforming Data Into
+          <span>Meaningful Insights</span>
+        </h1>
+
+        <p>
+          Exploring the intersection of analytics, technology,
+          and creativity — from interactive dashboards to
+          intelligent data solutions.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#projects">Explore Projects</a>
+          <a class="button secondary" href="#about">About Me</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-label">A Little About Me</div>
+        <h2>Hi, I'm Anna.</h2>
+
+        <p>
+          I'm a Data Analytics and Product Analytics professional
+          with eight years of experience across advertising
+          technology, healthcare, and loyalty marketing.
+        </p>
+
+        <p>
+          I enjoy translating complex data into actionable
+          business insights through analytics, interactive
+          dashboards, predictive modeling, and automation.
+          My work combines technical depth with a strong
+          focus on business impact and clear communication.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-label">Selected Work</div>
+        <h2>Featured Projects</h2>
+        <p class="section-intro">
+          Three different approaches to turning complex data
+          into business value.
+        </p>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="card-accent coral"></div>
+            <div class="project-number">01 / BUSINESS INTELLIGENCE</div>
+            <h3>Marketing Campaign Performance Dashboard</h3>
+            <p>
+              An interactive Power BI dashboard exploring
+              marketing performance across entertainment
+              and animation studio campaigns, using an
+              original synthetic dataset.
+            </p>
+            <div class="tech">Power BI · DAX · Data Modeling · KPIs</div>
+            <div class="status">Dashboard built</div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-accent violet"></div>
+            <div class="project-number">02 / ADVANCED ANALYTICS</div>
+            <h3>Programmatic Media Efficiency</h3>
+            <p>
+              Analyzing large-scale real-time bidding data
+              to evaluate media costs, bidding performance,
+              and potential bid price optimization opportunities.
+            </p>
+            <div class="tech">Python · SQL · DuckDB · Data Engineering</div>
+            <div class="status">In progress</div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-accent navy"></div>
+            <div class="project-number">03 / ARTIFICIAL INTELLIGENCE</div>
+            <h3>Natural Language BI Assistant</h3>
+            <p>
+              A planned AI-powered analytics solution
+              exploring how business users can ask questions
+              in natural language and receive data-driven
+              answers through a semantic layer.
+            </p>
+            <div class="tech">Snowflake · SQL · Semantic Layer · LLMs</div>
+            <div class="status">Planned</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">What I Bring</div>
+        <h2>Technical Expertise</h2>
+        <p class="section-intro">
+          A combination of business intelligence,
+          advanced analytics, machine learning,
+          and AI-assisted development.
+        </p>
+
+        <div class="skill-list">
+          <span class="skill">SQL</span>
+          <span class="skill">Python</span>
+          <span class="skill">Snowflake</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">DAX</span>
+          <span class="skill">Data Modeling</span>
+          <span class="skill">ETL & Data Pipelines</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">Predictive Analytics</span>
+          <span class="skill">AI & Automation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="connect" id="connect">
+      <div class="container">
+        <div class="section-label">Let's Connect</div>
+        <h2>Let's Turn Data Into Possibilities</h2>
+        <p>
+          Interested in analytics, business intelligence,
+          or intelligent data solutions? Let's connect.
+        </p>
+
+        <a class="button primary"
+           href="https://github.com/ansim-lab"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit My GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Anna S. · Data Analytics Portfolio
+  </footer>
+
 </body>
 </html>
